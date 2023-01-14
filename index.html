@@ -15,46 +15,19 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
-                <div class="container-fluid">
-                    <div id="fecha" style="color: aliceblue;"></div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="float-right">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#convierte">Convertidor</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#subsidio">Beneficio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contacto.html">Contacto</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="evaluanos.html">Evaluanos</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <div class="opciones">
+                <div><span>BootCamp JS - Modulo 3</span></div>
+            </div>
         </header>
         <main>
-            <section id="inicio">
-
-            </section>
-            <section id="convierte">
-                <div class="">
+            <section class="container mt-5">
+                <div class="col-10">
                     <div class="form-group row">
-                        <label for="region" class="col-sm-1 col-form-label">Cantidad : </label>
-                        <div class="col-sm-5">
+                        <label for="dolares" class="col-2 col-form-label">Cantidad : </label>
+                        <div class="col-5">
                             <input class="form-control" type="number" id="dolares" placeholder ="Ingrese la cantidad" autofocus />
                         </div>
-                        <div>
+                        <div class="mt-2">
                             <button class="btn btn-outline-success" type="button" onclick="calcular()">Calcular</button>
                         </div>
                         <br><br>
@@ -62,11 +35,55 @@
                     </div>
                 </div>
             </section>
-            <section id="subsidio">
-
+            <hr>
+            <section class="container">
+                <div class="col-10">
+                    <div class="form-group row">
+                        <label for="edad" class="col-1 col-form-label">Edad : </label>
+                        <div class="col-4">
+                            <input class="form-control" type="number" id="edad" placeholder ="Ingrese su edad" autofocus />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="monto" class="col-1 col-form-label">Monto : </label>
+                        <div class="col-4">
+                            <input class="form-control" type="number" id="monto" placeholder ="Ingrese monto ahorrado"/>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="nucleo" class="col-3 col-form-label">Postula con nucleo familiar </label>
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ingreso" class="col-3 col-form-label">Ingreso bruto familiar </label>
+                        <div class="col-5">
+                            <input class="form-control" type="number" id="ingreso" placeholder ="Ingrese el monto"/>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="benefi" class="col-2 col-form-label">Posee vivienda : </label>
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="benefi2" class="col-5 col-form-label">Es beneficiario de algún programa MINVU : </label>
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="btn btn-outline-success" type="button" onclick="postular()">Postular</button>
+                    </div>
+                    <br><br>
+                    <div id="resultado"></div>
+                </div>
             </section>
         </main>
-        <footer>
+        <footer class="footer">
             <p>Derechos Reservados. Diseñado por <strong>Reinaldo Blanco</strong></p>
         </footer>
     <!-- Bootstrap JS-->
