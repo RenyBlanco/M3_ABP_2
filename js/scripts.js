@@ -1,50 +1,51 @@
-let formato = new Intl.NumberFormat('es-CL', {
-  style: 'currency',
-  currency: 'CLP'
-})
 
-// Ejercicio Convertidor
+// Ejercicio Numero
 
-function calcular() {
-    let dolares = document.getElementById('dolares').value;
-    if (dolares > 0) {
-        document.getElementById('resultado').innerHTML = '<h4> El monto en CLP : ' + formato.format((dolares * 745)) + '</h4>';
+function revisar() {
+    let numero = document.getElementById('numero').value;
+    if ((numero > 5 && numero < 15) || (numero == 55) || (numero == 70)) {
+        document.getElementById('resultado').innerHTML = '<h4> El número '+numero+' tiene opciones de ganar</h4>';
     } else {
-        document.getElementById('resultado').innerHTML = '<h4> El monto debe ser mayor que 0</h4>';
+        document.getElementById('resultado').innerHTML = '<h4> El número '+numero+' no es favorable</h4>';
     }
 }
 
-// Ejercicio Beneficio
-function postular(){
-    let uf = 30000;
-    if(document.getElementById("edad").value < 18){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por ser menor de edad</h4>';
+// Ejercicio Bisiesto
+function bisiesto(){
+    let ano = document.getElementById('ano').value;
+    if (((ano % 4 == 0) && (ano % 100 != 0 )) || (ano % 400 == 0)){
+        document.getElementById('resultado').innerHTML = '<h4> El año '+ano+' es Bisiesto</h4>';
+    }else {
+        document.getElementById('resultado').innerHTML = '<h4> El año '+ano+' no es Bisieso</h4>';
+    }
+}
+
+//Ejercicio Sets
+function sets(){
+    let a = document.getElementById('ganados_a').value;
+    let b = document.getElementById('ganados_b').value;
+    if ((a > 7) || (b > 7))  {
+        document.getElementById('resultado').innerHTML = '<h4> El Resultado es Inválido!</h4>';
         return
     }
-    if(document.getElementById("monto").value < (4*uf)){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por no poseer el monto ahorrado mínimo</h4>';
+    if(a==b){
+        document.getElementById('resultado').innerHTML = '<h4> El Set aún no termina!</h4>';
         return
     }
-    var postula;
-    document.getElementById("postula").checked ? postula = true : postula = false;
-    if(!postula && document.getElementById("edad").value < 60){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por no postular con su conyugé o algún hijo(a)</h4>';
+    if((a >= 5) && ((a-b)==2)){
+        document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador A!</h4>';
         return
     }
-    if(document.getElementById("ingreso").value < (7*uf)){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por que su ingreso está por debajo del requerido</h4>';
+    if((b >= 5 )&& ((b-a)==2)){
+        document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador B!</h4>';
         return
     }
-    if(document.getElementById("ingreso").value > (25*uf)){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por que su ingreso está por encima del requerido</h4>';
+    if(((a-b > 2) && (a > 5)) || ((b-a > 2) && (b > 5))) {
+        document.getElementById('resultado').innerHTML = '<h4> El Resultado es Inválido!</h4>';
         return
     }
-    if(document.getElementById("casa").checked){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por que ya posee una casa</h4>';
-        return
-    }
-    if(document.getElementById("es").checked){
-        document.getElementById('resultado').innerHTML = '<h4> Usted No puede ser beneficiario, por que ya posee un beneficio del MINVU</h4>';
+    if(((a-b > 2) && (a < 5)) || ((b-a > 2) && (b < 5))) {
+        document.getElementById('resultado').innerHTML = '<h4> El Set aún no termina!</h4>';
         return
     }
 }
