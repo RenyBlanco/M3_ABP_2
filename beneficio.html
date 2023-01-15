@@ -22,56 +22,40 @@
         <main>
             <section class="container mt-5">
                 <div class="col-10">
-                    <div class="form-group row">
-                        <label for="dolares" class="col-2 col-form-label">Cantidad : </label>
-                        <div class="col-5">
-                            <input class="form-control" type="number" id="dolares" placeholder ="Ingrese la cantidad" autofocus />
-                        </div>
-                        <div class="mt-2">
-                            <button class="btn btn-outline-success" type="button" onclick="calcular()">Calcular</button>
-                        </div>
-                        <br><br>
-                        <div id="resultado"></div>
-                    </div>
-                </div>
-            </section>
-            <hr>
-            <section class="container">
-                <div class="col-10">
-                    <div class="form-group row">
+                    <div class="form-group row mt-2">
                         <label for="edad" class="col-1 col-form-label">Edad : </label>
                         <div class="col-4">
                             <input class="form-control" type="number" id="edad" placeholder ="Ingrese su edad" autofocus />
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-2">
                         <label for="monto" class="col-1 col-form-label">Monto : </label>
                         <div class="col-4">
                             <input class="form-control" type="number" id="monto" placeholder ="Ingrese monto ahorrado"/>
                         </div>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group mt-2">
                         <label for="nucleo" class="col-3 col-form-label">Postula con nucleo familiar </label>
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" value="0" id="postula">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-2">
                         <label for="ingreso" class="col-3 col-form-label">Ingreso bruto familiar </label>
                         <div class="col-5">
                             <input class="form-control" type="number" id="ingreso" placeholder ="Ingrese el monto"/>
                         </div>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group mt-2">
                         <label for="benefi" class="col-2 col-form-label">Posee vivienda : </label>
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" value="0" id="casa">
                         </div>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group mt-2">
                         <label for="benefi2" class="col-5 col-form-label">Es beneficiario de algún programa MINVU : </label>
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" value="0" id="es">
                         </div>
                     </div>
                     <br>
@@ -79,7 +63,7 @@
                         <button class="btn btn-outline-success" type="button" onclick="postular()">Postular</button>
                     </div>
                     <br><br>
-                    <div id="resultado"></div>
+                    <div class="mt-5" id="resultado"></div>
                 </div>
             </section>
         </main>
