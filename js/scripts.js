@@ -1,9 +1,8 @@
-
 // Ejercicio Numero
 
 function revisar() {
-    let numero = document.getElementById('numero').value;
-    if ((numero > 5 && numero < 15) || (numero == 55) || (numero == 70)) {
+    let numero = parseInt(document.getElementById('numero').value);
+    if ((numero >= 5 && numero <= 15) || (numero == 55) || (numero == 70)) {
         document.getElementById('resultado').innerHTML = '<h4> El número '+numero+' tiene opciones de ganar</h4>';
     } else {
         document.getElementById('resultado').innerHTML = '<h4> El número '+numero+' no es favorable</h4>';
@@ -12,7 +11,7 @@ function revisar() {
 
 // Ejercicio Bisiesto
 function bisiesto(){
-    let ano = document.getElementById('ano').value;
+    let ano = parseInt(document.getElementById('ano').value);
     if (((ano % 4 == 0) && (ano % 100 != 0 )) || (ano % 400 == 0)){
         document.getElementById('resultado').innerHTML = '<h4> El año '+ano+' es Bisiesto</h4>';
     }else {
@@ -32,19 +31,27 @@ function sets(){
         document.getElementById('resultado').innerHTML = '<h4> El Set aún no termina!</h4>';
         return
     }
-    if((a >= 5) && ((a-b)==2)){
+    if((a == 7) && (b==6)){
         document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador A!</h4>';
         return
     }
-    if((b >= 5 )&& ((b-a)==2)){
+    if((a == 6) && (b==7)){
         document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador B!</h4>';
         return
     }
-    if(((a-b > 2) && (a > 5)) || ((b-a > 2) && (b > 5))) {
+    if((a >= 6) && ((a-b)>=2)){
+        document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador A!</h4>';
+        return
+    }
+    if((b >= 6 )&& ((b-a)>=2)){
+        document.getElementById('resultado').innerHTML = '<h4> El Ganador es el Jugador B!</h4>';
+        return
+    }
+    if(((a-b > 2) && (a > 6)) || ((b-a > 2) && (b > 6))) {
         document.getElementById('resultado').innerHTML = '<h4> El Resultado es Inválido!</h4>';
         return
     }
-    if(((a-b > 2) && (a < 5)) || ((b-a > 2) && (b < 5))) {
+    if(((a-b >= 2) && (a < 6)) || ((b-a >= 2) && (b < 6))) {
         document.getElementById('resultado').innerHTML = '<h4> El Set aún no termina!</h4>';
         return
     }
